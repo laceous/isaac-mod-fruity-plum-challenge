@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Fruity Plum Challenge</name>
+    <directory>fruity plum challenge</directory>
+    <id>2976323640</id>
+    <description>This is a joke mod based off of my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2884230835]Little Beast Challenge[/url].
+
+Start as a blindfolded Isaac riding A Pony. You'll get one Fruity Plum upgraded with Baby-Bender and Forgotten Lullaby. Travel through the Basement repeatedly until you face off against Baby Plum.
+
+Starting items:
+[list]
+    [*]Fruity Plum (familiar)
+    [*]Baby-Bender (smelted trinket / gives familiars homing shots)
+    [*]Forgotten Lullaby (smelted trinket / gives familiars higher rate of fire)
+    [*]A Pony (pocket slot / flight)
+    [*]AAA Battery (trinket / lets A Pony recharge after each room)
+[/list]
+
+Items like the D4 shouldn't show up, but be careful. If you lose your Fruity Plum for any reason, that's a failure scenario. The whole point of this challenge is Baby Plum vs Fruity Plum.
+
+You can play co-op if you want, but only the first player will get a Fruity Plum.
+
+Recommended mods:
+[list]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2575180437]Baby Plum Trophy[/url]
+[/list]</description>
+    <version>1.1</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Familiars"/>
+    <tag id="Challenges"/>
+</metadata>
