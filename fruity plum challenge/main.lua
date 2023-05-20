@@ -190,13 +190,7 @@ function mod:getRomanVal(c)
     M  = 1000
   }
   
-  for k, v in pairs(tbl) do
-    if k == c then
-      return v
-    end
-  end
-  
-  return nil
+  return tbl[c]
 end
 
 function mod:doBabyPlumRoomLogic()
