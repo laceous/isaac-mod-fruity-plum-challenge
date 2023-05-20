@@ -47,16 +47,7 @@ function mod:onNewLevel()
   
   -- force baby plum by XX
   -- check past this number just in case something like book of rev was used
-  -- if we need to go deeper then add some code to parse this into an integer
-  local basementNum = mod:getBasementNum()
-  
-  if basementNum == 'XX' or
-     basementNum == 'XXI' or
-     basementNum == 'XXII' or
-     basementNum == 'XXIII' or
-     basementNum == 'XXIV' or
-     basementNum == 'XXV'
-  then
+  if mod:getBasementNum() >= 20 then
     local seeds = game:GetSeeds()
     local level = game:GetLevel()
     local stage = level:GetStage()
@@ -144,32 +135,68 @@ end
 function mod:getBasementNum()
   local level = game:GetLevel()
   local name = level:GetName()
-  local num = ''
   
   -- Basement I, Basement III?
-  -- loop backwards until we find a space
   -- there might be punctuation at the very end
   -- this works for multi-language
-  for i = string.len(name), 1, -1 do
-    local c = string.sub(name, i, i)
-    if c == ' ' then
-      break
-    elseif mod:isRomanNum(c) then
-      num = c .. num
+  local num = string.match(name, ' ([IVXLCDM]+)%p*$')
+  
+  if num then
+    return mod:romanToInt(num)
+  end
+  
+  return 0
+end
+
+-- this doesn't validate roman numerals
+function mod:romanToInt(s)
+  local num = 0
+  
+  local i = 1
+  while i <= string.len(s) do
+    local c = string.sub(s, i, i + 1)
+    local n = string.len(c) == 2 and mod:getRomanVal(c)
+    if n then
+      i = i + 1
+    else
+      c = string.sub(s, i, i)
+      n = mod:getRomanVal(c)
     end
+    
+    if n then
+      num = num + n
+    end
+    
+    i = i + 1
   end
   
   return num
 end
 
-function mod:isRomanNum(c)
-  for _, v in ipairs({ 'I', 'V', 'X', 'L', 'C', 'D', 'M' }) do
-    if v == c then
-      return true
+function mod:getRomanVal(c)
+  local tbl = {
+    I  = 1,
+    IV = 4,
+    V  = 5,
+    IX = 9,
+    X  = 10,
+    XL = 40,
+    L  = 50,
+    XC = 90,
+    C  = 100,
+    CD = 400,
+    D  = 500,
+    CM = 900,
+    M  = 1000
+  }
+  
+  for k, v in pairs(tbl) do
+    if k == c then
+      return v
     end
   end
   
-  return false
+  return nil
 end
 
 function mod:doBabyPlumRoomLogic()
