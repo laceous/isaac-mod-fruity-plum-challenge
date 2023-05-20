@@ -17,7 +17,6 @@ function mod:onGameStart(isContinue)
     local itemPool = game:GetItemPool()
     -- remove items that could change our loadout
     itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_BAG_OF_CRAFTING)
-    itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_BROKEN_MODEM)
     itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_CLICKER)
     itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_D4)
     itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_D100)
