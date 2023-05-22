@@ -5,5 +5,7 @@
     <!-- hard mode -->
     <!-- no curse of labyrinth -->
     <!-- no sacrifice or dice rooms -->
-    <challenge id="1" name="Fruity Plum Challenge" playertype="0" canshoot="false" endstage="3" difficulty="1" cursefilter="2" roomfilter="13,21" />
+    <!-- no treasure rooms for giant challenge -->
+    <challenge id="1" name="Fruity Plum Challenge"         playertype="0" canshoot="false" endstage="3" difficulty="1" cursefilter="2" roomfilter="13,21" />
+    <challenge id="2" name="Fruity Plum Challenge (Giant)" playertype="0" canshoot="false" endstage="3" difficulty="1" cursefilter="2" roomfilter="13,21,4" />
 </challenges>

@@ -23,8 +23,17 @@ You can play co-op if you want, but only the first player will get a Fruity Plum
 Recommended mods:
 [list]
     [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2575180437]Baby Plum Trophy[/url]
-[/list]</description>
-    <version>1.5</version>
+[/list]
+
+[hr][/hr]
+
+A new challenge has appeared:
+[list]
+    [*]Fruity Plum Challenge (Giant)
+[/list]
+
+Play with a giant version of Fruity Plum (aka Baby Plum). Baby Plum is pretty OP so treasure rooms will be disabled.</description>
+    <version>1.6</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Familiars"/>
