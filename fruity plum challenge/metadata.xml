@@ -26,14 +26,13 @@ Recommended mods:
 [/list]
 
 [hr][/hr]
-
 A new challenge has appeared:
 [list]
     [*]Fruity Plum Challenge (Giant)
 [/list]
 
 Play with a giant version of Fruity Plum (aka Baby Plum). Baby Plum is pretty OP so treasure rooms will be disabled.</description>
-    <version>1.6</version>
+    <version>1.7</version>
     <visibility>Public</visibility>
     <tag id="Lua"/>
     <tag id="Familiars"/>

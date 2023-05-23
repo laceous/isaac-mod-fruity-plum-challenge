@@ -137,6 +137,7 @@ function mod:onPeffectUpdate(player)
   end
 end
 
+-- filtered to BABY_PLUM
 function mod:onFamiliarUpdate(familiar)
   if not mod:isGiantChallenge() then
     return
