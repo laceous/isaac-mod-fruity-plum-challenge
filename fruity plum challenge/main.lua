@@ -70,18 +70,23 @@ function mod:onNewLevel()
     
     -- check for 1x1, but it should always be the case in the basement
     if bossRoom and bossRoom.Data and bossRoom.Data.Subtype ~= mod.babyPlumBossId and bossRoom.Data.Shape == RoomShape.ROOMSHAPE_1x1 then
-      local roomIdx = level:GetCurrentRoomIndex()
-      
       local rng = RNG()
       rng:SetSeed(seeds:GetStageSeed(stage), mod.rngShiftIdx)
-      local babyPlumRooms = { '5160', '5161', '5162', '5163', '5165' } -- 5164 only has 3 doors
+      local babyPlumRooms = { 5160, 5161, 5162, 5163, 5165 } -- 5164 only has 3 doors
       local babyPlumRoom = babyPlumRooms[rng:RandomInt(#babyPlumRooms) + 1]
       
-      Isaac.ExecuteCommand('goto s.boss.' .. babyPlumRoom)
-      local dbg = level:GetRoomByIdx(GridRooms.ROOM_DEBUG_IDX, -1)
-      bossRoom.Data = dbg.Data
-      
-      game:StartRoomTransition(roomIdx, Direction.NO_DIRECTION, RoomTransitionAnim.FADE, nil, -1)
+      if REPENTOGON then
+        local data = RoomConfigHolder.GetRoomByStageTypeAndVariant(StbType.SPECIAL_ROOMS, RoomType.ROOM_BOSS, babyPlumRoom, -1)
+        bossRoom.Data = data
+      else
+        local roomIdx = level:GetCurrentRoomIndex()
+        
+        Isaac.ExecuteCommand('goto s.boss.' .. babyPlumRoom)
+        local dbg = level:GetRoomByIdx(GridRooms.ROOM_DEBUG_IDX, -1)
+        bossRoom.Data = dbg.Data
+        
+        game:StartRoomTransition(roomIdx, Direction.NO_DIRECTION, RoomTransitionAnim.FADE, nil, -1)
+      end
     end
   end
 end
